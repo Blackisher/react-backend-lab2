@@ -1,0 +1,170 @@
+2019-10-31 08:15:54,835 CRIT Supervisor running as root (no user in config file)
+2019-10-31 08:15:54,835 WARN Included extra file "/etc/supervisor/conf.d/application.conf" during parsing
+2019-10-31 08:15:54,835 WARN Included extra file "/etc/supervisor/conf.d/containerlistener.conf" during parsing
+2019-10-31 08:15:54,885 INFO RPC interface 'supervisor' initialized
+2019-10-31 08:15:54,886 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-10-31 08:15:54,886 INFO supervisord started with pid 3193
+2019-10-31 08:15:55,888 INFO spawned: 'supervisor_listener' with pid 3264
+2019-10-31 08:15:55,889 INFO spawned: 'application-web-1' with pid 3265
+2019-10-31 08:15:57,339 INFO success: supervisor_listener entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:15:57,339 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:21:10,500 INFO waiting for application-web-1 to stop
+2019-10-31 08:21:10,584 INFO stopped: application-web-1 (exit status 143)
+2019-10-31 08:21:11,828 INFO waiting for supervisor_listener to stop
+2019-10-31 08:21:11,830 INFO stopped: supervisor_listener (terminated by SIGQUIT)
+2019-10-31 08:21:12,846 WARN received SIGTERM indicating exit request
+2019-10-31 08:21:13,861 CRIT Supervisor running as root (no user in config file)
+2019-10-31 08:21:13,861 WARN Included extra file "/etc/supervisor/conf.d/application.conf" during parsing
+2019-10-31 08:21:13,861 WARN Included extra file "/etc/supervisor/conf.d/containerlistener.conf" during parsing
+2019-10-31 08:21:13,912 INFO RPC interface 'supervisor' initialized
+2019-10-31 08:21:13,912 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-10-31 08:21:13,912 INFO supervisord started with pid 3645
+2019-10-31 08:21:14,914 INFO spawned: 'supervisor_listener' with pid 3716
+2019-10-31 08:21:14,916 INFO spawned: 'application-web-1' with pid 3717
+2019-10-31 08:21:16,545 INFO success: supervisor_listener entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:21:16,545 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:21:25,903 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:21:26,905 INFO spawned: 'application-web-1' with pid 3774
+2019-10-31 08:21:28,020 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:21:37,029 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:21:38,031 INFO spawned: 'application-web-1' with pid 3815
+2019-10-31 08:21:39,144 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:21:48,225 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:21:49,227 INFO spawned: 'application-web-1' with pid 3847
+2019-10-31 08:21:50,339 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:21:59,220 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:22:00,222 INFO spawned: 'application-web-1' with pid 3881
+2019-10-31 08:22:01,335 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:22:10,600 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:22:11,602 INFO spawned: 'application-web-1' with pid 3929
+2019-10-31 08:22:12,715 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:22:21,741 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:22:22,743 INFO spawned: 'application-web-1' with pid 3963
+2019-10-31 08:22:23,860 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:22:32,963 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:22:33,966 INFO spawned: 'application-web-1' with pid 3995
+2019-10-31 08:22:35,083 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:22:44,257 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:22:45,259 INFO spawned: 'application-web-1' with pid 4029
+2019-10-31 08:22:46,371 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:22:55,324 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:22:56,327 INFO spawned: 'application-web-1' with pid 4061
+2019-10-31 08:22:57,440 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:23:06,496 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:23:07,499 INFO spawned: 'application-web-1' with pid 4111
+2019-10-31 08:23:08,615 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:23:17,632 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:23:18,634 INFO spawned: 'application-web-1' with pid 4146
+2019-10-31 08:23:19,747 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:23:28,616 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:23:29,619 INFO spawned: 'application-web-1' with pid 4178
+2019-10-31 08:23:30,731 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:23:39,640 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:23:40,643 INFO spawned: 'application-web-1' with pid 4212
+2019-10-31 08:23:41,755 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:23:50,925 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:23:51,927 INFO spawned: 'application-web-1' with pid 4244
+2019-10-31 08:23:53,045 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:24:02,436 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:24:03,439 INFO spawned: 'application-web-1' with pid 4294
+2019-10-31 08:24:04,551 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:24:13,533 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:24:14,535 INFO spawned: 'application-web-1' with pid 4326
+2019-10-31 08:24:15,647 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:24:24,875 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:24:25,878 INFO spawned: 'application-web-1' with pid 4360
+2019-10-31 08:24:26,991 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:24:35,888 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:24:36,890 INFO spawned: 'application-web-1' with pid 4392
+2019-10-31 08:24:38,003 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:24:47,140 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:24:48,142 INFO spawned: 'application-web-1' with pid 4427
+2019-10-31 08:24:49,255 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:24:58,285 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:24:59,287 INFO spawned: 'application-web-1' with pid 4461
+2019-10-31 08:25:00,398 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:25:09,578 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:25:10,581 INFO spawned: 'application-web-1' with pid 4512
+2019-10-31 08:25:11,696 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:25:20,967 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:25:21,969 INFO spawned: 'application-web-1' with pid 4546
+2019-10-31 08:25:23,084 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:25:32,109 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:25:33,112 INFO spawned: 'application-web-1' with pid 4578
+2019-10-31 08:25:34,223 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:25:43,193 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:25:44,195 INFO spawned: 'application-web-1' with pid 4612
+2019-10-31 08:25:45,307 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:25:54,494 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:25:55,496 INFO spawned: 'application-web-1' with pid 4644
+2019-10-31 08:25:56,607 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:26:05,963 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:26:06,966 INFO spawned: 'application-web-1' with pid 4694
+2019-10-31 08:26:08,079 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:26:17,140 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:26:18,143 INFO spawned: 'application-web-1' with pid 4727
+2019-10-31 08:26:19,257 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:26:28,371 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:26:29,374 INFO spawned: 'application-web-1' with pid 4761
+2019-10-31 08:26:30,483 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:26:39,620 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:26:40,622 INFO spawned: 'application-web-1' with pid 4797
+2019-10-31 08:26:41,736 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:26:50,812 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:26:51,815 INFO spawned: 'application-web-1' with pid 4829
+2019-10-31 08:26:52,927 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:27:02,176 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:27:03,178 INFO spawned: 'application-web-1' with pid 4879
+2019-10-31 08:27:04,291 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:27:13,373 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:27:14,375 INFO spawned: 'application-web-1' with pid 4911
+2019-10-31 08:27:15,488 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:27:24,548 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:27:25,551 INFO spawned: 'application-web-1' with pid 4945
+2019-10-31 08:27:26,664 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:27:35,858 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:27:36,861 INFO spawned: 'application-web-1' with pid 4977
+2019-10-31 08:27:37,976 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:27:46,912 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:27:47,914 INFO spawned: 'application-web-1' with pid 5012
+2019-10-31 08:27:49,027 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:27:57,971 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:27:58,974 INFO spawned: 'application-web-1' with pid 5044
+2019-10-31 08:28:00,087 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:28:11,030 INFO exited: application-web-1 (exit status 1; not expected)
+2019-10-31 08:28:11,734 INFO spawned: 'application-web-1' with pid 5177
+2019-10-31 08:28:11,739 INFO waiting for application-web-1 to stop
+2019-10-31 08:28:13,853 INFO waiting for application-web-1 to stop
+2019-10-31 08:28:16,421 INFO waiting for application-web-1 to stop
+2019-10-31 08:28:19,016 INFO waiting for application-web-1 to stop
+2019-10-31 08:28:21,731 INFO waiting for application-web-1 to stop
+2019-10-31 08:28:21,806 WARN killing 'application-web-1' (5177) with SIGKILL
+2019-10-31 08:28:21,812 INFO stopped: application-web-1 (terminated by SIGKILL)
+2019-10-31 08:28:23,053 INFO waiting for supervisor_listener to stop
+2019-10-31 08:28:23,055 INFO stopped: supervisor_listener (terminated by SIGQUIT)
+2019-10-31 08:28:24,072 WARN received SIGTERM indicating exit request
+2019-10-31 08:28:25,061 CRIT Supervisor running as root (no user in config file)
+2019-10-31 08:28:25,061 WARN Included extra file "/etc/supervisor/conf.d/application.conf" during parsing
+2019-10-31 08:28:25,061 WARN Included extra file "/etc/supervisor/conf.d/containerlistener.conf" during parsing
+2019-10-31 08:28:25,114 INFO RPC interface 'supervisor' initialized
+2019-10-31 08:28:25,114 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-10-31 08:28:25,114 INFO supervisord started with pid 5255
+2019-10-31 08:28:26,117 INFO spawned: 'supervisor_listener' with pid 5326
+2019-10-31 08:28:26,118 INFO spawned: 'application-web-1' with pid 5327
+2019-10-31 08:28:27,744 INFO success: supervisor_listener entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:28:27,744 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:40:23,286 INFO waiting for application-web-1 to stop
+2019-10-31 08:40:23,377 INFO stopped: application-web-1 (exit status 143)
+2019-10-31 08:40:24,618 INFO waiting for supervisor_listener to stop
+2019-10-31 08:40:24,619 INFO stopped: supervisor_listener (terminated by SIGQUIT)
+2019-10-31 08:40:25,636 WARN received SIGTERM indicating exit request
+2019-10-31 08:40:26,642 CRIT Supervisor running as root (no user in config file)
+2019-10-31 08:40:26,642 WARN Included extra file "/etc/supervisor/conf.d/application.conf" during parsing
+2019-10-31 08:40:26,642 WARN Included extra file "/etc/supervisor/conf.d/containerlistener.conf" during parsing
+2019-10-31 08:40:26,698 INFO RPC interface 'supervisor' initialized
+2019-10-31 08:40:26,698 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-10-31 08:40:26,698 INFO supervisord started with pid 5969
+2019-10-31 08:40:27,700 INFO spawned: 'supervisor_listener' with pid 6040
+2019-10-31 08:40:27,702 INFO spawned: 'application-web-1' with pid 6041
+2019-10-31 08:40:29,325 INFO success: supervisor_listener entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-10-31 08:40:29,326 INFO success: application-web-1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

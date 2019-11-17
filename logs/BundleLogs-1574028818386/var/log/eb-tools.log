@@ -1,0 +1,68 @@
+2019-10-31 08:30:02,693 [INFO] (5466 MainThread) [tailLogs.py-56] [root tailLogs main] Starting tail logs task with batch id e0ca16ec-433c-4487-bb9d-6a1e99e97ba8
+2019-10-31 08:30:02,696 [INFO] (5466 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/nginx/error.log
+2019-10-31 08:30:02,700 [INFO] (5466 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/web-1.log
+2019-10-31 08:30:02,700 [INFO] (5466 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/web-1.error.log
+2019-10-31 08:30:02,702 [INFO] (5466 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-activity.log
+2019-10-31 08:30:02,703 [INFO] (5466 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/nginx/access.log
+2019-10-31 08:30:02,705 [INFO] (5466 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-commandprocessor.log
+2019-10-31 08:30:02,951 [INFO] (5466 MainThread) [s3_tools.py-208] [root s3_tools _process_result] Received status code 200 with text: 
+2019-10-31 08:30:02,951 [INFO] (5466 MainThread) [upload_tools.py-317] [root upload_tools __exit__] Successfully uploaded tailed content for 6 files to s3 at location resources/environments/logs/tail/e-8wmampmxnf/i-053ac00382fbeab6a/TailLogs-1572510602706.out
+2019-10-31 08:30:02,952 [INFO] (5466 MainThread) [tailLogs.py-92] [root tailLogs main] [Instance: i-053ac00382fbeab6a] Successfully finished tailing 6 log(s)
+2019-10-31 08:33:00,563 [INFO] (5547 MainThread) [tailLogs.py-56] [root tailLogs main] Starting tail logs task with batch id a186ca00-b7ae-4b0d-8e73-f089aca3d88a
+2019-10-31 08:33:00,566 [INFO] (5547 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/nginx/error.log
+2019-10-31 08:33:00,570 [INFO] (5547 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/web-1.log
+2019-10-31 08:33:00,570 [INFO] (5547 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/web-1.error.log
+2019-10-31 08:33:00,573 [INFO] (5547 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-activity.log
+2019-10-31 08:33:00,573 [INFO] (5547 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/nginx/access.log
+2019-10-31 08:33:00,576 [INFO] (5547 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-commandprocessor.log
+2019-10-31 08:33:00,727 [INFO] (5547 MainThread) [s3_tools.py-208] [root s3_tools _process_result] Received status code 200 with text: 
+2019-10-31 08:33:00,727 [INFO] (5547 MainThread) [upload_tools.py-317] [root upload_tools __exit__] Successfully uploaded tailed content for 6 files to s3 at location resources/environments/logs/tail/e-8wmampmxnf/i-053ac00382fbeab6a/TailLogs-1572510780576.out
+2019-10-31 08:33:00,727 [INFO] (5547 MainThread) [tailLogs.py-92] [root tailLogs main] [Instance: i-053ac00382fbeab6a] Successfully finished tailing 6 log(s)
+2019-10-31 08:35:16,083 [INFO] (5637 MainThread) [bundleLogs.py-54] [root bundleLogs main] Starting bundle logs task with batch id 2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471
+2019-10-31 08:35:16,089 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/eb-tools.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,089 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/yum.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,089 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/cfn-init-cmd.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,090 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/supervisord.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,090 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/eb-cfn-init-call.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,090 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/cfn-init.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,090 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/web-1.error.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,091 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/eb-commandprocessor.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,091 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/nginx/error.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,092 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/cloud-init-output.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,093 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/eb-cfn-init.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,093 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/healthd/daemon.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,093 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/nginx/access.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,094 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/eb-container-listener.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,096 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/messages to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,097 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/cfn-hup.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,097 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/eb-publish-logs.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,097 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/cron to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,126 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/web-1.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,128 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/eb-activity.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,128 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/cfn-wire.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,129 [INFO] (5637 MainThread) [upload_tools.py-364] [root upload_tools execute] Successfully archived file /var/log/cloud-init.log to /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,317 [INFO] (5637 MainThread) [s3_tools.py-208] [root s3_tools _process_result] Received status code 200 with text: 
+2019-10-31 08:35:16,317 [INFO] (5637 MainThread) [upload_tools.py-395] [root upload_tools __exit__] Successfully uploaded archive file /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip to s3 at location resources/environments/logs/bundle/e-8wmampmxnf/i-053ac00382fbeab6a/BundleLogs-1572510916130.zip
+2019-10-31 08:35:16,317 [INFO] (5637 MainThread) [upload_tools.py-404] [root upload_tools __exit__] Successfully deleted archive file /tmp/BundleLogs-2aaeaa81-28f3-4d4e-84c2-19ca3b2e4471.zip
+2019-10-31 08:35:16,318 [INFO] (5637 MainThread) [bundleLogs.py-82] [root bundleLogs main] [Instance: i-053ac00382fbeab6a] Successfully finished bundling 22 log(s)
+2019-11-17 21:59:35,684 [INFO] (22378 MainThread) [tailLogs.py-56] [root tailLogs main] Starting tail logs task with batch id 00394b07-3127-4446-8214-dd6017cb638a
+2019-11-17 21:59:35,692 [INFO] (22378 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/nginx/error.log
+2019-11-17 21:59:35,693 [INFO] (22378 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/web-1.log
+2019-11-17 21:59:35,693 [INFO] (22378 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/web-1.error.log
+2019-11-17 21:59:35,695 [INFO] (22378 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-activity.log
+2019-11-17 21:59:35,699 [INFO] (22378 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/nginx/access.log
+2019-11-17 21:59:35,702 [INFO] (22378 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-commandprocessor.log
+2019-11-17 21:59:35,822 [INFO] (22378 MainThread) [s3_tools.py-208] [root s3_tools _process_result] Received status code 200 with text: 
+2019-11-17 21:59:35,822 [INFO] (22378 MainThread) [upload_tools.py-317] [root upload_tools __exit__] Successfully uploaded tailed content for 6 files to s3 at location resources/environments/logs/tail/e-8wmampmxnf/i-053ac00382fbeab6a/TailLogs-1574027975702.out
+2019-11-17 21:59:35,822 [INFO] (22378 MainThread) [tailLogs.py-92] [root tailLogs main] [Instance: i-053ac00382fbeab6a] Successfully finished tailing 6 log(s)
+2019-11-17 22:11:30,117 [INFO] (22836 MainThread) [tailLogs.py-56] [root tailLogs main] Starting tail logs task with batch id 7f836492-e2eb-47f7-9625-270168e7048b
+2019-11-17 22:11:30,125 [INFO] (22836 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/nginx/error.log
+2019-11-17 22:11:30,129 [INFO] (22836 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/web-1.log
+2019-11-17 22:11:30,129 [INFO] (22836 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/web-1.error.log
+2019-11-17 22:11:30,131 [INFO] (22836 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-activity.log
+2019-11-17 22:11:30,135 [INFO] (22836 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/nginx/access.log
+2019-11-17 22:11:30,138 [INFO] (22836 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-commandprocessor.log
+2019-11-17 22:11:30,302 [INFO] (22836 MainThread) [s3_tools.py-208] [root s3_tools _process_result] Received status code 200 with text: 
+2019-11-17 22:11:30,302 [INFO] (22836 MainThread) [upload_tools.py-317] [root upload_tools __exit__] Successfully uploaded tailed content for 6 files to s3 at location resources/environments/logs/tail/e-8wmampmxnf/i-053ac00382fbeab6a/TailLogs-1574028690138.out
+2019-11-17 22:11:30,302 [INFO] (22836 MainThread) [tailLogs.py-92] [root tailLogs main] [Instance: i-053ac00382fbeab6a] Successfully finished tailing 6 log(s)
+2019-11-17 22:13:38,127 [INFO] (22910 MainThread) [bundleLogs.py-54] [root bundleLogs main] Starting bundle logs task with batch id dd5df13e-37aa-40dc-8c0d-e0f43e95f830

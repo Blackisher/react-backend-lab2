@@ -1,0 +1,1229 @@
+[2019-10-31T08:15:08.234Z] INFO  [2847]  - [Initialization] : Starting activity...
+[2019-10-31T08:15:08.235Z] INFO  [2847]  - [Initialization/AddonsBefore] : Starting activity...
+[2019-10-31T08:15:08.235Z] INFO  [2847]  - [Initialization/AddonsBefore/InstallCWLAgent] : Starting activity...
+[2019-10-31T08:15:08.235Z] INFO  [2847]  - [Initialization/AddonsBefore/InstallCWLAgent/01-install-cwl-agent.sh] : Starting activity...
+[2019-10-31T08:15:10.553Z] INFO  [2847]  - [Initialization/AddonsBefore/InstallCWLAgent/01-install-cwl-agent.sh] : Completed activity. Result:
+  + grep -iq 'Amazon Linux' /etc/issue
+  + yum install -y awslogs
+  Loaded plugins: priorities, update-motd, upgrade-helper
+  Repodata is over 2 weeks old. Install yum-cron? Or run: yum makecache fast
+  Resolving Dependencies
+  --> Running transaction check
+  ---> Package awslogs.noarch 0:1.1.4-1.12.amzn1 will be installed
+  --> Processing Dependency: aws-cli-plugin-cloudwatch-logs(python27) for package: awslogs-1.1.4-1.12.amzn1.noarch
+  --> Running transaction check
+  ---> Package aws-cli-plugin-cloudwatch-logs.noarch 0:1.4.4-1.16.amzn1 will be installed
+  --> Finished Dependency Resolution
+  
+  Dependencies Resolved
+  
+  ================================================================================
+   Package                          Arch     Version            Repository   Size
+  ================================================================================
+  Installing:
+   awslogs                          noarch   1.1.4-1.12.amzn1   amzn-main   9.2 k
+  Installing for dependencies:
+   aws-cli-plugin-cloudwatch-logs   noarch   1.4.4-1.16.amzn1   amzn-main    71 k
+  
+  Transaction Summary
+  ================================================================================
+  Install  1 Package (+1 Dependent package)
+  
+  Total download size: 81 k
+  Installed size: 246 k
+  Downloading packages:
+  --------------------------------------------------------------------------------
+  Total                                              640 kB/s |  81 kB  00:00     
+  Running transaction check
+  Running transaction test
+  Transaction test succeeded
+  Running transaction
+    Installing : aws-cli-plugin-cloudwatch-logs-1.4.4-1.16.amzn1.noarch       1/2 
+    Installing : awslogs-1.1.4-1.12.amzn1.noarch                              2/2 
+    Verifying  : awslogs-1.1.4-1.12.amzn1.noarch                              1/2 
+    Verifying  : aws-cli-plugin-cloudwatch-logs-1.4.4-1.16.amzn1.noarch       2/2 
+  
+  Installed:
+    awslogs.noarch 0:1.1.4-1.12.amzn1                                             
+  
+  Dependency Installed:
+    aws-cli-plugin-cloudwatch-logs.noarch 0:1.4.4-1.16.amzn1                      
+  
+  Complete!
+  + cat
+  ++ sed 's/.$//'
+  ++ curl 169.254.169.254/latest/meta-data/placement/availability-zone
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                   Dload  Upload   Total   Spent    Left  Speed
+    0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    10  100    10    0     0  10000      0 --:--:-- --:--:-- --:--:-- 10000
+  + region=us-east-1
+  + sed -i -e 's/region = .*/region = us-east-1/g' /etc/awslogs/awscli.conf
+  + /opt/elasticbeanstalk/bin/log-conf -n awslogs -l/var/log/awslogs.log
+[2019-10-31T08:15:10.553Z] INFO  [2847]  - [Initialization/AddonsBefore/InstallCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/install.
+[2019-10-31T08:15:10.553Z] INFO  [2847]  - [Initialization/AddonsBefore] : Completed activity.
+[2019-10-31T08:15:10.553Z] INFO  [2847]  - [Initialization/PreInitStage0] : Starting activity...
+[2019-10-31T08:15:10.553Z] INFO  [2847]  - [Initialization/PreInitStage0/DownloadSourceBundle] : Starting activity...
+[2019-10-31T08:15:11.456Z] INFO  [2847]  - [Initialization/PreInitStage0/DownloadSourceBundle] : Completed activity. Result:
+  [2019-10-31T08:15:10.661Z] INFO  [2914]  : Application version will be saved to /opt/elasticbeanstalk/deploy/appsource.
+  [2019-10-31T08:15:10.661Z] INFO  [2914]  : Using manifest cache with deployment ID 1 and serial 1.
+  [2019-10-31T08:15:10.661Z] INFO  [2914]  : Attempting to download application source bundle to: '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2019-10-31T08:15:10.661Z] INFO  [2914]  : Using computed s3 key.
+  [2019-10-31T08:15:10.785Z] INFO  [2914]  : Downloading from bucket 'elasticbeanstalk-us-east-1-745453658083' with key 'resources/environments/e-8wmampmxnf/_runtime/_versions/lab4/lab4-source' and version '' to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2019-10-31T08:15:10.858Z] INFO  [2914]  : Size: 42647029, ETag: "e84496c7516715be5202fe5387d7e422", Metadata: {"environmentid"=>"e-8wmampmxnf", "requestid"=>"60ccf7df-90f5-41a7-971e-954d8f5c6bc1"}.
+  [2019-10-31T08:15:11.438Z] INFO  [2914]  : Downloaded size: 42647029.
+  [2019-10-31T08:15:11.438Z] INFO  [2914]  : Successfully downloaded to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+[2019-10-31T08:15:11.456Z] INFO  [2847]  - [Initialization/PreInitStage0/PreInitHook] : Starting activity...
+[2019-10-31T08:15:11.456Z] INFO  [2847]  - [Initialization/PreInitStage0/PreInitHook/01_install_dependencies.sh] : Starting activity...
+[2019-10-31T08:15:11.552Z] INFO  [2847]  - [Initialization/PreInitStage0/PreInitHook/01_install_dependencies.sh] : Completed activity.
+[2019-10-31T08:15:11.552Z] INFO  [2847]  - [Initialization/PreInitStage0/PreInitHook/01_install_procfile.sh] : Starting activity...
+[2019-10-31T08:15:11.643Z] INFO  [2847]  - [Initialization/PreInitStage0/PreInitHook/01_install_procfile.sh] : Completed activity.
+[2019-10-31T08:15:11.644Z] INFO  [2847]  - [Initialization/PreInitStage0/PreInitHook/01_install_proxy.sh] : Starting activity...
+[2019-10-31T08:15:11.735Z] INFO  [2847]  - [Initialization/PreInitStage0/PreInitHook/01_install_proxy.sh] : Completed activity.
+[2019-10-31T08:15:11.735Z] INFO  [2847]  - [Initialization/PreInitStage0/PreInitHook/01_install_xray_daemon.sh] : Starting activity...
+[2019-10-31T08:15:11.849Z] INFO  [2847]  - [Initialization/PreInitStage0/PreInitHook/01_install_xray_daemon.sh] : Completed activity. Result:
+  Executing: /bin/chown -R xray:xray /var/log/xray
+  
+[2019-10-31T08:15:11.850Z] INFO  [2847]  - [Initialization/PreInitStage0/PreInitHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/preinit.
+[2019-10-31T08:15:11.850Z] INFO  [2847]  - [Initialization/PreInitStage0] : Completed activity. Result:
+  Initialization - Command CMD-PreInit stage 0 completed
+[2019-10-31T08:15:11.850Z] INFO  [2847]  - [Initialization/AddonsAfter] : Starting activity...
+[2019-10-31T08:15:11.850Z] INFO  [2847]  - [Initialization/AddonsAfter] : Completed activity.
+[2019-10-31T08:15:11.850Z] INFO  [2847]  - [Initialization] : Completed activity. Result:
+  Initialization - Command CMD-PreInit succeeded
+[2019-10-31T08:15:48.810Z] INFO  [3040]  - [Application deployment lab4-source@1] : Starting activity...
+[2019-10-31T08:15:48.810Z] INFO  [3040]  - [Application deployment lab4-source@1/AddonsBefore] : Starting activity...
+[2019-10-31T08:15:48.810Z] INFO  [3040]  - [Application deployment lab4-source@1/AddonsBefore/ConfigCWLAgent] : Starting activity...
+[2019-10-31T08:15:48.810Z] INFO  [3040]  - [Application deployment lab4-source@1/AddonsBefore/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2019-10-31T08:15:48.936Z] INFO  [3040]  - [Application deployment lab4-source@1/AddonsBefore/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2019-10-31T08:15:48.936Z] INFO  [3040]  - [Application deployment lab4-source@1/AddonsBefore/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2019-10-31T08:15:48.936Z] INFO  [3040]  - [Application deployment lab4-source@1/AddonsBefore] : Completed activity.
+[2019-10-31T08:15:49.284Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0] : Starting activity...
+[2019-10-31T08:15:49.284Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/HealthdLogRotation] : Starting activity...
+[2019-10-31T08:15:49.290Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/HealthdLogRotation] : Completed activity. Result:
+  ["/etc/cron.hourly/cron.logrotate.elasticbeanstalk.healthd.conf"]
+[2019-10-31T08:15:49.290Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/HealthdHTTPDLogging] : Starting activity...
+[2019-10-31T08:15:49.290Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/HealthdHTTPDLogging] : Completed activity.
+[2019-10-31T08:15:49.290Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/HealthdNginxLogging] : Starting activity...
+[2019-10-31T08:15:49.290Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/HealthdNginxLogging] : Completed activity.
+[2019-10-31T08:15:49.291Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/EbExtensionPreBuild] : Starting activity...
+[2019-10-31T08:15:49.644Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Starting activity...
+[2019-10-31T08:15:49.645Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Completed activity.
+[2019-10-31T08:15:49.661Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/EbExtensionPreBuild] : Completed activity.
+[2019-10-31T08:15:49.662Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/AppDeployPreHook] : Starting activity...
+[2019-10-31T08:15:49.662Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/AppDeployPreHook/01_configure_application.sh] : Starting activity...
+[2019-10-31T08:15:50.609Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/AppDeployPreHook/01_configure_application.sh] : Completed activity. Result:
+  Executing: /usr/bin/unzip -o -d /var/app/staging /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+     creating: /var/app/staging/META-INF/
+    inflating: /var/app/staging/META-INF/MANIFEST.MF  
+     creating: /var/app/staging/org/
+     creating: /var/app/staging/org/springframework/
+     creating: /var/app/staging/org/springframework/boot/
+     creating: /var/app/staging/org/springframework/boot/loader/
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$PrefixMatchingArchiveFilter.class  
+     creating: /var/app/staging/org/springframework/boot/loader/jar/
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryFileHeader.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/ZipInflaterInputStream.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryVisitor.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarEntryFilter.class  
+     creating: /var/app/staging/org/springframework/boot/loader/archive/
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive$JarFileEntry.class  
+     creating: /var/app/staging/org/springframework/boot/loader/util/
+    inflating: /var/app/staging/org/springframework/boot/loader/util/SystemPropertyUtils.class  
+     creating: /var/app/staging/org/springframework/boot/loader/data/
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile$FileAccess.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/MainMethodRunner.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/FileHeader.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$ArchiveEntryFilter.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive$Entry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile$DataInputStream.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessData.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/JarLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryEndRecord.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/Handler.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries$EntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/StringSequence.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryParser.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$2.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/Bytes.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$JarFileType.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarEntry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/AsciiBytes.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/WarLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive$EntryFilter.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive$EntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/ExecutableArchiveLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/Launcher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntryIterator$EntryComparator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/LaunchedURLClassLoader.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection$JarEntryName.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile.class  
+     creating: /var/app/staging/BOOT-INF/
+     creating: /var/app/staging/BOOT-INF/classes/
+     creating: /var/app/staging/BOOT-INF/classes/pw/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/service/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/
+     creating: /var/app/staging/META-INF/maven/
+     creating: /var/app/staging/META-INF/maven/pw.backend.lab/
+     creating: /var/app/staging/META-INF/maven/pw.backend.lab/backend-lab-2/
+    inflating: /var/app/staging/BOOT-INF/classes/application-dev.properties  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateTimeDeserializer.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/InvalidFileException.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateTimeSerializer.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/ResourceNotFoundException.class  
+    inflating: /var/app/staging/META-INF/maven/pw.backend.lab/backend-lab-2/pom.xml  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/UnauthorizedException.class  
+    inflating: /var/app/staging/META-INF/maven/pw.backend.lab/backend-lab-2/pom.properties  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/BackLabApplication.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/service/UserService.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/service/UserServiceImpl.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/User.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/UserController.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/UserRepository.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateDeserializer.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateSerializer.class  
+     creating: /var/app/staging/BOOT-INF/lib/
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-actuator-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-logging-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/log4j-to-slf4j-2.11.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/log4j-api-2.11.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jul-to-slf4j-1.7.28.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.annotation-api-1.3.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/snakeyaml-1.23.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-actuator-autoconfigure-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-actuator-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-databind-2.9.9.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-core-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-context-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-datatype-jsr310-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/micrometer-core-1.1.7.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/HdrHistogram-2.1.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/LatencyUtils-2.0.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-data-rest-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-rest-webmvc-3.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-rest-core-3.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-hateoas-0.25.2.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-plugin-core-1.2.0.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/evo-inflector-1.2.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-annotations-2.9.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-web-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-json-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-datatype-jdk8-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-module-parameter-names-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-tomcat-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/tomcat-embed-core-9.0.26.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/tomcat-embed-el-9.0.26.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/tomcat-embed-websocket-9.0.26.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/hibernate-validator-6.0.17.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/validation-api-2.0.1.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jboss-logging-3.3.3.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/classmate-1.4.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-web-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-beans-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-webmvc-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-aop-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-expression-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-data-jpa-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-aop-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/aspectjweaver-1.9.4.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-jdbc-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/HikariCP-3.2.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-jdbc-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.transaction-api-1.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jaxb-api-2.3.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.activation-api-1.2.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/hibernate-core-5.3.12.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.persistence-api-2.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javassist-3.23.2-GA.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/byte-buddy-1.9.16.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/antlr-2.7.7.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jandex-2.0.5.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/dom4j-2.1.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/hibernate-commons-annotations-5.0.4.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jaxb-runtime-2.3.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/txw2-2.3.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/istack-commons-runtime-3.0.7.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/stax-ex-1.8.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/FastInfoset-1.2.15.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-jpa-2.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-commons-2.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-orm-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-tx-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-aspects-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/logback-classic-1.2.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/logback-core-1.2.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/slf4j-api-1.7.28.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-autoconfigure-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/postgresql-42.2.8.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/lombok-1.18.10.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-core-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-jcl-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/h2-1.4.199.jar  
+  FileMagic v0.7.1: compiled magic version [5.21] does not match with shared library magic version [5.34]
+  Executing: HOME=/tmp /opt/elasticbeanstalk/lib/ruby/bin/ruby /opt/elasticbeanstalk/lib/ruby/bin/foreman export supervisord --procfile /var/app/staging/Procfile --root /var/app/current --app application --log /var/log/ --user webapp --template /opt/elasticbeanstalk/private/config/foreman/supervisord --env /var/elasticbeanstalk/staging/elasticbeanstalk.env /var/elasticbeanstalk/staging/supervisor
+  [foreman export] writing: application.conf
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n supervisor -l'/var/log/supervisord.log' -t bundlelogs
+  
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n containerlistener -l'/var/log/eb-container-listener.log' -t bundlelogs
+  
+[2019-10-31T08:15:50.609Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/AppDeployPreHook/01_configure_xray.sh] : Starting activity...
+[2019-10-31T08:15:50.720Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/AppDeployPreHook/01_configure_xray.sh] : Completed activity.
+[2019-10-31T08:15:50.720Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/AppDeployPreHook/03_configure_proxy.sh] : Starting activity...
+[2019-10-31T08:15:50.908Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/AppDeployPreHook/03_configure_proxy.sh] : Completed activity. Result:
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n nginx -l'/var/log/nginx/*'
+  
+  Executing: /usr/sbin/nginx -t -c /var/elasticbeanstalk/staging/nginx/nginx.conf
+  nginx: the configuration file /var/elasticbeanstalk/staging/nginx/nginx.conf syntax is ok
+  nginx: configuration file /var/elasticbeanstalk/staging/nginx/nginx.conf test is successful
+[2019-10-31T08:15:50.908Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2019-10-31T08:15:50.908Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/EbExtensionPostBuild] : Starting activity...
+[2019-10-31T08:15:51.258Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2019-10-31T08:15:51.259Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2019-10-31T08:15:51.275Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/EbExtensionPostBuild] : Completed activity.
+[2019-10-31T08:15:51.275Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/InfraCleanEbExtension] : Starting activity...
+[2019-10-31T08:15:51.276Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0/InfraCleanEbExtension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /var/app/staging.
+[2019-10-31T08:15:51.276Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage0] : Completed activity. Result:
+  Application deployment - Command CMD-Startup stage 0 completed
+[2019-10-31T08:15:51.276Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1] : Starting activity...
+[2019-10-31T08:15:51.276Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook] : Starting activity...
+[2019-10-31T08:15:51.276Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/01_stop_before_promote.sh] : Starting activity...
+[2019-10-31T08:15:51.858Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/01_stop_before_promote.sh] : Completed activity. Result:
+  Executing: /usr/local/bin/supervisorctl -c /etc/supervisor/supervisord.conf stop application:*
+  unix:///tmp/supervisor.sock no such file
+  Executing: /usr/local/bin/supervisorctl -c /etc/supervisor/supervisord.conf stop all
+  unix:///tmp/supervisor.sock no such file
+  Executing: /sbin/status supervisord
+  supervisord stop/waiting
+[2019-10-31T08:15:51.858Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/01stop_xray.sh] : Starting activity...
+[2019-10-31T08:15:53.977Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/01stop_xray.sh] : Completed activity. Result:
+  Executing: if ( initctl status xray | grep start ); then initctl stop xray; fi
+  xray start/running, process 2254
+  xray stop/waiting
+[2019-10-31T08:15:53.977Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/02start_xray.sh] : Starting activity...
+[2019-10-31T08:15:54.085Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/02start_xray.sh] : Completed activity.
+[2019-10-31T08:15:54.085Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/03_stop_proxy.sh] : Starting activity...
+[2019-10-31T08:15:54.204Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/03_stop_proxy.sh] : Completed activity. Result:
+  Executing: service nginx stop
+  
+[2019-10-31T08:15:54.204Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/05_promote_application.sh] : Starting activity...
+[2019-10-31T08:15:54.304Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/05_promote_application.sh] : Completed activity.
+[2019-10-31T08:15:54.304Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/07_start_application.sh] : Starting activity...
+[2019-10-31T08:15:54.410Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/07_start_application.sh] : Completed activity. Result:
+  Executing: /sbin/start supervisord
+  supervisord start/running, process 3193
+[2019-10-31T08:15:54.411Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/09_start_proxy.sh] : Starting activity...
+[2019-10-31T08:15:57.027Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/09_start_proxy.sh] : Completed activity. Result:
+  Executing: service nginx stop
+  
+  Executing: service nginx start
+  Starting nginx: [  OK  ]
+  Executing: /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy nginx
+  
+  Executing: /opt/elasticbeanstalk/bin/healthd-configure --appstat-log-path /var/log/nginx/healthd/application.log --appstat-unit sec --appstat-timestamp-on 'completion'
+  
+  Executing: /opt/elasticbeanstalk/bin/healthd-restart
+  
+[2019-10-31T08:15:57.027Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/11_stop_after_promote.sh] : Starting activity...
+[2019-10-31T08:15:57.566Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook/11_stop_after_promote.sh] : Completed activity.
+[2019-10-31T08:15:57.566Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2019-10-31T08:15:57.566Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployPostHook] : Starting activity...
+[2019-10-31T08:15:57.566Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2019-10-31T08:15:57.566Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/PostInitHook] : Starting activity...
+[2019-10-31T08:15:57.566Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1/PostInitHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/postinit.
+[2019-10-31T08:15:57.566Z] INFO  [3040]  - [Application deployment lab4-source@1/StartupStage1] : Completed activity. Result:
+  Application deployment - Command CMD-Startup stage 1 completed
+[2019-10-31T08:15:57.567Z] INFO  [3040]  - [Application deployment lab4-source@1/AddonsAfter] : Starting activity...
+[2019-10-31T08:15:57.567Z] INFO  [3040]  - [Application deployment lab4-source@1/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2019-10-31T08:15:57.567Z] INFO  [3040]  - [Application deployment lab4-source@1/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2019-10-31T08:15:58.057Z] INFO  [3040]  - [Application deployment lab4-source@1/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2019-10-31T08:15:58.057Z] INFO  [3040]  - [Application deployment lab4-source@1/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2019-10-31T08:15:58.057Z] INFO  [3040]  - [Application deployment lab4-source@1/AddonsAfter] : Completed activity.
+[2019-10-31T08:15:58.057Z] INFO  [3040]  - [Application deployment lab4-source@1] : Completed activity. Result:
+  Application deployment - Command CMD-Startup succeeded
+[2019-10-31T08:21:08.972Z] INFO  [3500]  - [Configuration update lab4-source@2] : Starting activity...
+[2019-10-31T08:21:08.972Z] INFO  [3500]  - [Configuration update lab4-source@2/AddonsBefore] : Starting activity...
+[2019-10-31T08:21:08.972Z] INFO  [3500]  - [Configuration update lab4-source@2/AddonsBefore/ConfigCWLAgent] : Starting activity...
+[2019-10-31T08:21:08.973Z] INFO  [3500]  - [Configuration update lab4-source@2/AddonsBefore/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2019-10-31T08:21:09.100Z] INFO  [3500]  - [Configuration update lab4-source@2/AddonsBefore/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2019-10-31T08:21:09.100Z] INFO  [3500]  - [Configuration update lab4-source@2/AddonsBefore/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2019-10-31T08:21:09.100Z] INFO  [3500]  - [Configuration update lab4-source@2/AddonsBefore] : Completed activity.
+[2019-10-31T08:21:09.100Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage0] : Starting activity...
+[2019-10-31T08:21:09.100Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage0/ConfigDeployPreHook] : Starting activity...
+[2019-10-31T08:21:09.101Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage0/ConfigDeployPreHook/01_configure_application.sh] : Starting activity...
+[2019-10-31T08:21:09.879Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage0/ConfigDeployPreHook/01_configure_application.sh] : Completed activity. Result:
+  Executing: /usr/bin/unzip -o -d /var/app/staging /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+     creating: /var/app/staging/META-INF/
+    inflating: /var/app/staging/META-INF/MANIFEST.MF  
+     creating: /var/app/staging/org/
+     creating: /var/app/staging/org/springframework/
+     creating: /var/app/staging/org/springframework/boot/
+     creating: /var/app/staging/org/springframework/boot/loader/
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$PrefixMatchingArchiveFilter.class  
+     creating: /var/app/staging/org/springframework/boot/loader/jar/
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryFileHeader.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/ZipInflaterInputStream.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryVisitor.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarEntryFilter.class  
+     creating: /var/app/staging/org/springframework/boot/loader/archive/
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive$JarFileEntry.class  
+     creating: /var/app/staging/org/springframework/boot/loader/util/
+    inflating: /var/app/staging/org/springframework/boot/loader/util/SystemPropertyUtils.class  
+     creating: /var/app/staging/org/springframework/boot/loader/data/
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile$FileAccess.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/MainMethodRunner.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/FileHeader.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$ArchiveEntryFilter.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive$Entry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile$DataInputStream.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessData.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/JarLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryEndRecord.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/Handler.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries$EntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/StringSequence.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryParser.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$2.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/Bytes.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$JarFileType.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarEntry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/AsciiBytes.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/WarLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive$EntryFilter.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive$EntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/ExecutableArchiveLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/Launcher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntryIterator$EntryComparator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/LaunchedURLClassLoader.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection$JarEntryName.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile.class  
+     creating: /var/app/staging/BOOT-INF/
+     creating: /var/app/staging/BOOT-INF/classes/
+     creating: /var/app/staging/BOOT-INF/classes/pw/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/service/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/
+     creating: /var/app/staging/META-INF/maven/
+     creating: /var/app/staging/META-INF/maven/pw.backend.lab/
+     creating: /var/app/staging/META-INF/maven/pw.backend.lab/backend-lab-2/
+    inflating: /var/app/staging/BOOT-INF/classes/application-dev.properties  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateTimeDeserializer.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/InvalidFileException.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateTimeSerializer.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/ResourceNotFoundException.class  
+    inflating: /var/app/staging/META-INF/maven/pw.backend.lab/backend-lab-2/pom.xml  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/UnauthorizedException.class  
+    inflating: /var/app/staging/META-INF/maven/pw.backend.lab/backend-lab-2/pom.properties  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/BackLabApplication.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/service/UserService.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/service/UserServiceImpl.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/User.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/UserController.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/UserRepository.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateDeserializer.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateSerializer.class  
+     creating: /var/app/staging/BOOT-INF/lib/
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-actuator-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-logging-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/log4j-to-slf4j-2.11.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/log4j-api-2.11.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jul-to-slf4j-1.7.28.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.annotation-api-1.3.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/snakeyaml-1.23.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-actuator-autoconfigure-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-actuator-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-databind-2.9.9.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-core-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-context-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-datatype-jsr310-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/micrometer-core-1.1.7.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/HdrHistogram-2.1.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/LatencyUtils-2.0.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-data-rest-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-rest-webmvc-3.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-rest-core-3.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-hateoas-0.25.2.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-plugin-core-1.2.0.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/evo-inflector-1.2.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-annotations-2.9.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-web-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-json-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-datatype-jdk8-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-module-parameter-names-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-tomcat-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/tomcat-embed-core-9.0.26.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/tomcat-embed-el-9.0.26.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/tomcat-embed-websocket-9.0.26.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/hibernate-validator-6.0.17.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/validation-api-2.0.1.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jboss-logging-3.3.3.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/classmate-1.4.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-web-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-beans-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-webmvc-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-aop-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-expression-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-data-jpa-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-aop-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/aspectjweaver-1.9.4.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-jdbc-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/HikariCP-3.2.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-jdbc-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.transaction-api-1.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jaxb-api-2.3.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.activation-api-1.2.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/hibernate-core-5.3.12.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.persistence-api-2.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javassist-3.23.2-GA.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/byte-buddy-1.9.16.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/antlr-2.7.7.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jandex-2.0.5.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/dom4j-2.1.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/hibernate-commons-annotations-5.0.4.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jaxb-runtime-2.3.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/txw2-2.3.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/istack-commons-runtime-3.0.7.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/stax-ex-1.8.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/FastInfoset-1.2.15.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-jpa-2.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-commons-2.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-orm-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-tx-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-aspects-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/logback-classic-1.2.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/logback-core-1.2.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/slf4j-api-1.7.28.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-autoconfigure-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/postgresql-42.2.8.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/lombok-1.18.10.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-core-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-jcl-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/h2-1.4.199.jar  
+  FileMagic v0.7.1: compiled magic version [5.21] does not match with shared library magic version [5.34]
+  Executing: HOME=/tmp /opt/elasticbeanstalk/lib/ruby/bin/ruby /opt/elasticbeanstalk/lib/ruby/bin/foreman export supervisord --procfile /var/app/staging/Procfile --root /var/app/current --app application --log /var/log/ --user webapp --template /opt/elasticbeanstalk/private/config/foreman/supervisord --env /var/elasticbeanstalk/staging/elasticbeanstalk.env /var/elasticbeanstalk/staging/supervisor
+  [foreman export] writing: application.conf
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n supervisor -l'/var/log/supervisord.log' -t bundlelogs
+  
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n containerlistener -l'/var/log/eb-container-listener.log' -t bundlelogs
+  
+[2019-10-31T08:21:09.879Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage0/ConfigDeployPreHook/01_configure_xray.sh] : Starting activity...
+[2019-10-31T08:21:09.989Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage0/ConfigDeployPreHook/01_configure_xray.sh] : Completed activity.
+[2019-10-31T08:21:09.989Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage0/ConfigDeployPreHook/03_configure_proxy.sh] : Starting activity...
+[2019-10-31T08:21:10.165Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage0/ConfigDeployPreHook/03_configure_proxy.sh] : Completed activity. Result:
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n nginx -l'/var/log/nginx/*'
+  
+  Executing: /usr/sbin/nginx -t -c /var/elasticbeanstalk/staging/nginx/nginx.conf
+  nginx: the configuration file /var/elasticbeanstalk/staging/nginx/nginx.conf syntax is ok
+  nginx: configuration file /var/elasticbeanstalk/staging/nginx/nginx.conf test is successful
+[2019-10-31T08:21:10.165Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage0/ConfigDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/configdeploy/pre.
+[2019-10-31T08:21:10.165Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage0] : Completed activity. Result:
+  Configuration update - Command CMD-ConfigDeploy stage 0 completed
+[2019-10-31T08:21:10.165Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1] : Starting activity...
+[2019-10-31T08:21:10.165Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook] : Starting activity...
+[2019-10-31T08:21:10.165Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook/01_stop_before_promote.sh] : Starting activity...
+[2019-10-31T08:21:12.867Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook/01_stop_before_promote.sh] : Completed activity. Result:
+  Executing: /usr/local/bin/supervisorctl -c /etc/supervisor/supervisord.conf stop application:*
+  application:application-web-1: stopped
+  Executing: /usr/local/bin/supervisorctl -c /etc/supervisor/supervisord.conf stop all
+  listener:supervisor_listener: stopped
+  Executing: /sbin/status supervisord
+  supervisord start/running, process 3193
+  Executing: /sbin/stop supervisord
+  supervisord stop/waiting
+[2019-10-31T08:21:12.867Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook/01stop_xray.sh] : Starting activity...
+[2019-10-31T08:21:12.981Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook/01stop_xray.sh] : Completed activity. Result:
+  Executing: if ( initctl status xray | grep start ); then initctl stop xray; fi
+  
+[2019-10-31T08:21:12.982Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook/02start_xray.sh] : Starting activity...
+[2019-10-31T08:21:13.092Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook/02start_xray.sh] : Completed activity.
+[2019-10-31T08:21:13.092Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook/03_stop_proxy.sh] : Starting activity...
+[2019-10-31T08:21:13.312Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook/03_stop_proxy.sh] : Completed activity. Result:
+  Executing: service nginx stop
+  Stopping nginx: [  OK  ]
+[2019-10-31T08:21:13.312Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook/07_start_application.sh] : Starting activity...
+[2019-10-31T08:21:13.426Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook/07_start_application.sh] : Completed activity. Result:
+  Executing: /sbin/start supervisord
+  supervisord start/running, process 3645
+[2019-10-31T08:21:13.426Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook/09_start_proxy.sh] : Starting activity...
+[2019-10-31T08:21:16.052Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook/09_start_proxy.sh] : Completed activity. Result:
+  Executing: service nginx stop
+  
+  Executing: service nginx start
+  Starting nginx: [  OK  ]
+  Executing: /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy nginx
+  
+  Executing: /opt/elasticbeanstalk/bin/healthd-configure --appstat-log-path /var/log/nginx/healthd/application.log --appstat-unit sec --appstat-timestamp-on 'completion'
+  
+  Executing: /opt/elasticbeanstalk/bin/healthd-restart
+  
+[2019-10-31T08:21:16.052Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook/11_stop_after_promote.sh] : Starting activity...
+[2019-10-31T08:21:16.571Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook/11_stop_after_promote.sh] : Completed activity.
+[2019-10-31T08:21:16.571Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/configdeploy/enact.
+[2019-10-31T08:21:16.571Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployPostHook] : Starting activity...
+[2019-10-31T08:21:16.571Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1/ConfigDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/configdeploy/post.
+[2019-10-31T08:21:16.571Z] INFO  [3500]  - [Configuration update lab4-source@2/ConfigDeployStage1] : Completed activity. Result:
+  Application restart - Command CMD-ConfigDeploy stage 1 completed
+[2019-10-31T08:21:16.571Z] INFO  [3500]  - [Configuration update lab4-source@2/AddonsAfter] : Starting activity...
+[2019-10-31T08:21:16.571Z] INFO  [3500]  - [Configuration update lab4-source@2/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2019-10-31T08:21:16.571Z] INFO  [3500]  - [Configuration update lab4-source@2/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2019-10-31T08:21:17.126Z] INFO  [3500]  - [Configuration update lab4-source@2/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2019-10-31T08:21:17.126Z] INFO  [3500]  - [Configuration update lab4-source@2/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2019-10-31T08:21:17.127Z] INFO  [3500]  - [Configuration update lab4-source@2/AddonsAfter] : Completed activity.
+[2019-10-31T08:21:17.127Z] INFO  [3500]  - [Configuration update lab4-source@2] : Completed activity. Result:
+  Configuration update - Command CMD-ConfigDeploy succeeded
+[2019-10-31T08:28:08.239Z] INFO  [5091]  - [Configuration update lab4-source@3] : Starting activity...
+[2019-10-31T08:28:08.239Z] INFO  [5091]  - [Configuration update lab4-source@3/AddonsBefore] : Starting activity...
+[2019-10-31T08:28:08.239Z] INFO  [5091]  - [Configuration update lab4-source@3/AddonsBefore/ConfigCWLAgent] : Starting activity...
+[2019-10-31T08:28:08.239Z] INFO  [5091]  - [Configuration update lab4-source@3/AddonsBefore/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2019-10-31T08:28:08.694Z] INFO  [5091]  - [Configuration update lab4-source@3/AddonsBefore/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2019-10-31T08:28:08.694Z] INFO  [5091]  - [Configuration update lab4-source@3/AddonsBefore/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2019-10-31T08:28:08.695Z] INFO  [5091]  - [Configuration update lab4-source@3/AddonsBefore] : Completed activity.
+[2019-10-31T08:28:08.695Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage0] : Starting activity...
+[2019-10-31T08:28:08.695Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage0/ConfigDeployPreHook] : Starting activity...
+[2019-10-31T08:28:08.695Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage0/ConfigDeployPreHook/01_configure_application.sh] : Starting activity...
+[2019-10-31T08:28:11.110Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage0/ConfigDeployPreHook/01_configure_application.sh] : Completed activity. Result:
+  Executing: /usr/bin/unzip -o -d /var/app/staging /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+     creating: /var/app/staging/META-INF/
+    inflating: /var/app/staging/META-INF/MANIFEST.MF  
+     creating: /var/app/staging/org/
+     creating: /var/app/staging/org/springframework/
+     creating: /var/app/staging/org/springframework/boot/
+     creating: /var/app/staging/org/springframework/boot/loader/
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$PrefixMatchingArchiveFilter.class  
+     creating: /var/app/staging/org/springframework/boot/loader/jar/
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryFileHeader.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/ZipInflaterInputStream.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryVisitor.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarEntryFilter.class  
+     creating: /var/app/staging/org/springframework/boot/loader/archive/
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive$JarFileEntry.class  
+     creating: /var/app/staging/org/springframework/boot/loader/util/
+    inflating: /var/app/staging/org/springframework/boot/loader/util/SystemPropertyUtils.class  
+     creating: /var/app/staging/org/springframework/boot/loader/data/
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile$FileAccess.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/MainMethodRunner.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/FileHeader.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$ArchiveEntryFilter.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive$Entry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile$DataInputStream.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessData.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/JarLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryEndRecord.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/Handler.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries$EntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/StringSequence.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryParser.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$2.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/Bytes.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$JarFileType.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarEntry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/AsciiBytes.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/WarLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive$EntryFilter.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive$EntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/ExecutableArchiveLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/Launcher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntryIterator$EntryComparator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/LaunchedURLClassLoader.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection$JarEntryName.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile.class  
+     creating: /var/app/staging/BOOT-INF/
+     creating: /var/app/staging/BOOT-INF/classes/
+     creating: /var/app/staging/BOOT-INF/classes/pw/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/service/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/
+     creating: /var/app/staging/META-INF/maven/
+     creating: /var/app/staging/META-INF/maven/pw.backend.lab/
+     creating: /var/app/staging/META-INF/maven/pw.backend.lab/backend-lab-2/
+    inflating: /var/app/staging/BOOT-INF/classes/application-dev.properties  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateTimeDeserializer.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/InvalidFileException.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateTimeSerializer.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/ResourceNotFoundException.class  
+    inflating: /var/app/staging/META-INF/maven/pw.backend.lab/backend-lab-2/pom.xml  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/UnauthorizedException.class  
+    inflating: /var/app/staging/META-INF/maven/pw.backend.lab/backend-lab-2/pom.properties  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/BackLabApplication.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/service/UserService.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/service/UserServiceImpl.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/User.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/UserController.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/UserRepository.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateDeserializer.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateSerializer.class  
+     creating: /var/app/staging/BOOT-INF/lib/
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-actuator-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-logging-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/log4j-to-slf4j-2.11.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/log4j-api-2.11.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jul-to-slf4j-1.7.28.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.annotation-api-1.3.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/snakeyaml-1.23.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-actuator-autoconfigure-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-actuator-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-databind-2.9.9.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-core-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-context-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-datatype-jsr310-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/micrometer-core-1.1.7.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/HdrHistogram-2.1.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/LatencyUtils-2.0.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-data-rest-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-rest-webmvc-3.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-rest-core-3.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-hateoas-0.25.2.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-plugin-core-1.2.0.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/evo-inflector-1.2.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-annotations-2.9.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-web-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-json-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-datatype-jdk8-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-module-parameter-names-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-tomcat-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/tomcat-embed-core-9.0.26.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/tomcat-embed-el-9.0.26.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/tomcat-embed-websocket-9.0.26.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/hibernate-validator-6.0.17.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/validation-api-2.0.1.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jboss-logging-3.3.3.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/classmate-1.4.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-web-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-beans-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-webmvc-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-aop-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-expression-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-data-jpa-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-aop-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/aspectjweaver-1.9.4.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-jdbc-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/HikariCP-3.2.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-jdbc-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.transaction-api-1.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jaxb-api-2.3.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.activation-api-1.2.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/hibernate-core-5.3.12.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.persistence-api-2.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javassist-3.23.2-GA.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/byte-buddy-1.9.16.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/antlr-2.7.7.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jandex-2.0.5.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/dom4j-2.1.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/hibernate-commons-annotations-5.0.4.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jaxb-runtime-2.3.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/txw2-2.3.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/istack-commons-runtime-3.0.7.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/stax-ex-1.8.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/FastInfoset-1.2.15.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-jpa-2.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-commons-2.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-orm-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-tx-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-aspects-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/logback-classic-1.2.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/logback-core-1.2.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/slf4j-api-1.7.28.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-autoconfigure-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/postgresql-42.2.8.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/lombok-1.18.10.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-core-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-jcl-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/h2-1.4.199.jar  
+  FileMagic v0.7.1: compiled magic version [5.21] does not match with shared library magic version [5.34]
+  Executing: HOME=/tmp /opt/elasticbeanstalk/lib/ruby/bin/ruby /opt/elasticbeanstalk/lib/ruby/bin/foreman export supervisord --procfile /var/app/staging/Procfile --root /var/app/current --app application --log /var/log/ --user webapp --template /opt/elasticbeanstalk/private/config/foreman/supervisord --env /var/elasticbeanstalk/staging/elasticbeanstalk.env /var/elasticbeanstalk/staging/supervisor
+  [foreman export] writing: application.conf
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n supervisor -l'/var/log/supervisord.log' -t bundlelogs
+  
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n containerlistener -l'/var/log/eb-container-listener.log' -t bundlelogs
+  
+[2019-10-31T08:28:11.110Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage0/ConfigDeployPreHook/01_configure_xray.sh] : Starting activity...
+[2019-10-31T08:28:11.220Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage0/ConfigDeployPreHook/01_configure_xray.sh] : Completed activity.
+[2019-10-31T08:28:11.221Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage0/ConfigDeployPreHook/03_configure_proxy.sh] : Starting activity...
+[2019-10-31T08:28:11.400Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage0/ConfigDeployPreHook/03_configure_proxy.sh] : Completed activity. Result:
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n nginx -l'/var/log/nginx/*'
+  
+  Executing: /usr/sbin/nginx -t -c /var/elasticbeanstalk/staging/nginx/nginx.conf
+  nginx: the configuration file /var/elasticbeanstalk/staging/nginx/nginx.conf syntax is ok
+  nginx: configuration file /var/elasticbeanstalk/staging/nginx/nginx.conf test is successful
+[2019-10-31T08:28:11.400Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage0/ConfigDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/configdeploy/pre.
+[2019-10-31T08:28:11.401Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage0] : Completed activity. Result:
+  Configuration update - Command CMD-ConfigDeploy stage 0 completed
+[2019-10-31T08:28:11.401Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1] : Starting activity...
+[2019-10-31T08:28:11.401Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook] : Starting activity...
+[2019-10-31T08:28:11.401Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook/01_stop_before_promote.sh] : Starting activity...
+[2019-10-31T08:28:24.093Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook/01_stop_before_promote.sh] : Completed activity. Result:
+  Executing: /usr/local/bin/supervisorctl -c /etc/supervisor/supervisord.conf stop application:*
+  application:application-web-1: stopped
+  Executing: /usr/local/bin/supervisorctl -c /etc/supervisor/supervisord.conf stop all
+  listener:supervisor_listener: stopped
+  Executing: /sbin/status supervisord
+  supervisord start/running, process 3645
+  Executing: /sbin/stop supervisord
+  supervisord stop/waiting
+[2019-10-31T08:28:24.093Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook/01stop_xray.sh] : Starting activity...
+[2019-10-31T08:28:24.205Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook/01stop_xray.sh] : Completed activity. Result:
+  Executing: if ( initctl status xray | grep start ); then initctl stop xray; fi
+  
+[2019-10-31T08:28:24.205Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook/02start_xray.sh] : Starting activity...
+[2019-10-31T08:28:24.312Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook/02start_xray.sh] : Completed activity.
+[2019-10-31T08:28:24.312Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook/03_stop_proxy.sh] : Starting activity...
+[2019-10-31T08:28:24.530Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook/03_stop_proxy.sh] : Completed activity. Result:
+  Executing: service nginx stop
+  Stopping nginx: [  OK  ]
+[2019-10-31T08:28:24.530Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook/07_start_application.sh] : Starting activity...
+[2019-10-31T08:28:24.638Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook/07_start_application.sh] : Completed activity. Result:
+  Executing: /sbin/start supervisord
+  supervisord start/running, process 5255
+[2019-10-31T08:28:24.639Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook/09_start_proxy.sh] : Starting activity...
+[2019-10-31T08:28:27.255Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook/09_start_proxy.sh] : Completed activity. Result:
+  Executing: service nginx stop
+  
+  Executing: service nginx start
+  Starting nginx: [  OK  ]
+  Executing: /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy nginx
+  
+  Executing: /opt/elasticbeanstalk/bin/healthd-configure --appstat-log-path /var/log/nginx/healthd/application.log --appstat-unit sec --appstat-timestamp-on 'completion'
+  
+  Executing: /opt/elasticbeanstalk/bin/healthd-restart
+  
+[2019-10-31T08:28:27.255Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook/11_stop_after_promote.sh] : Starting activity...
+[2019-10-31T08:28:27.754Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook/11_stop_after_promote.sh] : Completed activity.
+[2019-10-31T08:28:27.754Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/configdeploy/enact.
+[2019-10-31T08:28:27.755Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployPostHook] : Starting activity...
+[2019-10-31T08:28:27.755Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1/ConfigDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/configdeploy/post.
+[2019-10-31T08:28:27.755Z] INFO  [5091]  - [Configuration update lab4-source@3/ConfigDeployStage1] : Completed activity. Result:
+  Application restart - Command CMD-ConfigDeploy stage 1 completed
+[2019-10-31T08:28:27.755Z] INFO  [5091]  - [Configuration update lab4-source@3/AddonsAfter] : Starting activity...
+[2019-10-31T08:28:27.755Z] INFO  [5091]  - [Configuration update lab4-source@3/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2019-10-31T08:28:27.755Z] INFO  [5091]  - [Configuration update lab4-source@3/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2019-10-31T08:28:28.326Z] INFO  [5091]  - [Configuration update lab4-source@3/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2019-10-31T08:28:28.326Z] INFO  [5091]  - [Configuration update lab4-source@3/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2019-10-31T08:28:28.326Z] INFO  [5091]  - [Configuration update lab4-source@3/AddonsAfter] : Completed activity.
+[2019-10-31T08:28:28.326Z] INFO  [5091]  - [Configuration update lab4-source@3] : Completed activity. Result:
+  Configuration update - Command CMD-ConfigDeploy succeeded
+[2019-10-31T08:30:02.609Z] INFO  [5461]  - [CMD-TailLogs] : Starting activity...
+[2019-10-31T08:30:02.609Z] INFO  [5461]  - [CMD-TailLogs/AddonsBefore] : Starting activity...
+[2019-10-31T08:30:02.610Z] INFO  [5461]  - [CMD-TailLogs/AddonsBefore] : Completed activity.
+[2019-10-31T08:30:02.610Z] INFO  [5461]  - [CMD-TailLogs/TailLogs] : Starting activity...
+[2019-10-31T08:30:02.610Z] INFO  [5461]  - [CMD-TailLogs/TailLogs/TailLogs] : Starting activity...
+[2019-10-31T08:30:02.963Z] INFO  [5461]  - [CMD-TailLogs/TailLogs/TailLogs] : Completed activity.
+[2019-10-31T08:30:02.963Z] INFO  [5461]  - [CMD-TailLogs/TailLogs] : Completed activity. Result:
+  CMD-TailLogs - stage 0 - Command CMD-TailLogs stage 0 completed
+[2019-10-31T08:30:02.963Z] INFO  [5461]  - [CMD-TailLogs/AddonsAfter] : Starting activity...
+[2019-10-31T08:30:02.964Z] INFO  [5461]  - [CMD-TailLogs/AddonsAfter] : Completed activity.
+[2019-10-31T08:30:02.964Z] INFO  [5461]  - [CMD-TailLogs] : Completed activity. Result:
+  CMD-TailLogs - Command CMD-TailLogs succeeded
+[2019-10-31T08:33:00.478Z] INFO  [5542]  - [CMD-TailLogs] : Starting activity...
+[2019-10-31T08:33:00.478Z] INFO  [5542]  - [CMD-TailLogs/AddonsBefore] : Starting activity...
+[2019-10-31T08:33:00.478Z] INFO  [5542]  - [CMD-TailLogs/AddonsBefore] : Completed activity.
+[2019-10-31T08:33:00.479Z] INFO  [5542]  - [CMD-TailLogs/TailLogs] : Starting activity...
+[2019-10-31T08:33:00.479Z] INFO  [5542]  - [CMD-TailLogs/TailLogs/TailLogs] : Starting activity...
+[2019-10-31T08:33:00.738Z] INFO  [5542]  - [CMD-TailLogs/TailLogs/TailLogs] : Completed activity.
+[2019-10-31T08:33:00.738Z] INFO  [5542]  - [CMD-TailLogs/TailLogs] : Completed activity. Result:
+  CMD-TailLogs - stage 0 - Command CMD-TailLogs stage 0 completed
+[2019-10-31T08:33:00.738Z] INFO  [5542]  - [CMD-TailLogs/AddonsAfter] : Starting activity...
+[2019-10-31T08:33:00.738Z] INFO  [5542]  - [CMD-TailLogs/AddonsAfter] : Completed activity.
+[2019-10-31T08:33:00.738Z] INFO  [5542]  - [CMD-TailLogs] : Completed activity. Result:
+  CMD-TailLogs - Command CMD-TailLogs succeeded
+[2019-10-31T08:35:15.999Z] INFO  [5632]  - [CMD-BundleLogs] : Starting activity...
+[2019-10-31T08:35:15.999Z] INFO  [5632]  - [CMD-BundleLogs/AddonsBefore] : Starting activity...
+[2019-10-31T08:35:16.000Z] INFO  [5632]  - [CMD-BundleLogs/AddonsBefore] : Completed activity.
+[2019-10-31T08:35:16.000Z] INFO  [5632]  - [CMD-BundleLogs/BundleLogs] : Starting activity...
+[2019-10-31T08:35:16.000Z] INFO  [5632]  - [CMD-BundleLogs/BundleLogs/BundleLogs] : Starting activity...
+[2019-10-31T08:35:16.328Z] INFO  [5632]  - [CMD-BundleLogs/BundleLogs/BundleLogs] : Completed activity.
+[2019-10-31T08:35:16.329Z] INFO  [5632]  - [CMD-BundleLogs/BundleLogs] : Completed activity. Result:
+  CMD-BundleLogs - stage 0 - Command CMD-BundleLogs stage 0 completed
+[2019-10-31T08:35:16.329Z] INFO  [5632]  - [CMD-BundleLogs/AddonsAfter] : Starting activity...
+[2019-10-31T08:35:16.329Z] INFO  [5632]  - [CMD-BundleLogs/AddonsAfter] : Completed activity.
+[2019-10-31T08:35:16.329Z] INFO  [5632]  - [CMD-BundleLogs] : Completed activity. Result:
+  CMD-BundleLogs - Command CMD-BundleLogs succeeded
+[2019-10-31T08:40:21.754Z] INFO  [5825]  - [Configuration update lab4-source@4] : Starting activity...
+[2019-10-31T08:40:21.754Z] INFO  [5825]  - [Configuration update lab4-source@4/AddonsBefore] : Starting activity...
+[2019-10-31T08:40:21.754Z] INFO  [5825]  - [Configuration update lab4-source@4/AddonsBefore/ConfigCWLAgent] : Starting activity...
+[2019-10-31T08:40:21.755Z] INFO  [5825]  - [Configuration update lab4-source@4/AddonsBefore/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2019-10-31T08:40:21.880Z] INFO  [5825]  - [Configuration update lab4-source@4/AddonsBefore/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2019-10-31T08:40:21.880Z] INFO  [5825]  - [Configuration update lab4-source@4/AddonsBefore/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2019-10-31T08:40:21.880Z] INFO  [5825]  - [Configuration update lab4-source@4/AddonsBefore] : Completed activity.
+[2019-10-31T08:40:21.881Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage0] : Starting activity...
+[2019-10-31T08:40:21.881Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage0/ConfigDeployPreHook] : Starting activity...
+[2019-10-31T08:40:21.881Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage0/ConfigDeployPreHook/01_configure_application.sh] : Starting activity...
+[2019-10-31T08:40:22.666Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage0/ConfigDeployPreHook/01_configure_application.sh] : Completed activity. Result:
+  Executing: /usr/bin/unzip -o -d /var/app/staging /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+     creating: /var/app/staging/META-INF/
+    inflating: /var/app/staging/META-INF/MANIFEST.MF  
+     creating: /var/app/staging/org/
+     creating: /var/app/staging/org/springframework/
+     creating: /var/app/staging/org/springframework/boot/
+     creating: /var/app/staging/org/springframework/boot/loader/
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$PrefixMatchingArchiveFilter.class  
+     creating: /var/app/staging/org/springframework/boot/loader/jar/
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryFileHeader.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/ZipInflaterInputStream.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryVisitor.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarEntryFilter.class  
+     creating: /var/app/staging/org/springframework/boot/loader/archive/
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive$JarFileEntry.class  
+     creating: /var/app/staging/org/springframework/boot/loader/util/
+    inflating: /var/app/staging/org/springframework/boot/loader/util/SystemPropertyUtils.class  
+     creating: /var/app/staging/org/springframework/boot/loader/data/
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile$FileAccess.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/MainMethodRunner.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/FileHeader.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$ArchiveEntryFilter.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive$Entry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile$DataInputStream.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessData.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/JarLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryEndRecord.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/Handler.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries$EntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/StringSequence.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryParser.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$2.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/Bytes.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$JarFileType.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarEntry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/AsciiBytes.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/WarLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive$EntryFilter.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive$EntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/ExecutableArchiveLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/Launcher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntryIterator$EntryComparator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/LaunchedURLClassLoader.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection$JarEntryName.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile.class  
+     creating: /var/app/staging/BOOT-INF/
+     creating: /var/app/staging/BOOT-INF/classes/
+     creating: /var/app/staging/BOOT-INF/classes/pw/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/service/
+     creating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/
+     creating: /var/app/staging/META-INF/maven/
+     creating: /var/app/staging/META-INF/maven/pw.backend.lab/
+     creating: /var/app/staging/META-INF/maven/pw.backend.lab/backend-lab-2/
+    inflating: /var/app/staging/BOOT-INF/classes/application-dev.properties  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateTimeDeserializer.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/InvalidFileException.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateTimeSerializer.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/ResourceNotFoundException.class  
+    inflating: /var/app/staging/META-INF/maven/pw.backend.lab/backend-lab-2/pom.xml  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/appException/UnauthorizedException.class  
+    inflating: /var/app/staging/META-INF/maven/pw.backend.lab/backend-lab-2/pom.properties  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/BackLabApplication.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/service/UserService.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/service/UserServiceImpl.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/User.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/UserController.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/user/UserRepository.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateDeserializer.class  
+    inflating: /var/app/staging/BOOT-INF/classes/pw/backend/lab/backlab/utils/JsonDateSerializer.class  
+     creating: /var/app/staging/BOOT-INF/lib/
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-actuator-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-logging-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/log4j-to-slf4j-2.11.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/log4j-api-2.11.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jul-to-slf4j-1.7.28.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.annotation-api-1.3.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/snakeyaml-1.23.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-actuator-autoconfigure-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-actuator-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-databind-2.9.9.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-core-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-context-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-datatype-jsr310-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/micrometer-core-1.1.7.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/HdrHistogram-2.1.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/LatencyUtils-2.0.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-data-rest-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-rest-webmvc-3.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-rest-core-3.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-hateoas-0.25.2.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-plugin-core-1.2.0.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/evo-inflector-1.2.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-annotations-2.9.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-web-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-json-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-datatype-jdk8-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jackson-module-parameter-names-2.9.9.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-tomcat-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/tomcat-embed-core-9.0.26.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/tomcat-embed-el-9.0.26.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/tomcat-embed-websocket-9.0.26.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/hibernate-validator-6.0.17.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/validation-api-2.0.1.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jboss-logging-3.3.3.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/classmate-1.4.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-web-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-beans-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-webmvc-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-aop-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-expression-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-data-jpa-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-aop-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/aspectjweaver-1.9.4.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-starter-jdbc-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/HikariCP-3.2.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-jdbc-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.transaction-api-1.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jaxb-api-2.3.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.activation-api-1.2.0.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/hibernate-core-5.3.12.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javax.persistence-api-2.2.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/javassist-3.23.2-GA.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/byte-buddy-1.9.16.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/antlr-2.7.7.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jandex-2.0.5.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/dom4j-2.1.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/hibernate-commons-annotations-5.0.4.Final.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/jaxb-runtime-2.3.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/txw2-2.3.1.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/istack-commons-runtime-3.0.7.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/stax-ex-1.8.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/FastInfoset-1.2.15.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-jpa-2.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-data-commons-2.1.11.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-orm-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-tx-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-aspects-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/logback-classic-1.2.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/logback-core-1.2.3.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/slf4j-api-1.7.28.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-boot-autoconfigure-2.1.9.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/postgresql-42.2.8.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/lombok-1.18.10.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-core-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/spring-jcl-5.1.10.RELEASE.jar  
+   extracting: /var/app/staging/BOOT-INF/lib/h2-1.4.199.jar  
+  FileMagic v0.7.1: compiled magic version [5.21] does not match with shared library magic version [5.34]
+  Executing: HOME=/tmp /opt/elasticbeanstalk/lib/ruby/bin/ruby /opt/elasticbeanstalk/lib/ruby/bin/foreman export supervisord --procfile /var/app/staging/Procfile --root /var/app/current --app application --log /var/log/ --user webapp --template /opt/elasticbeanstalk/private/config/foreman/supervisord --env /var/elasticbeanstalk/staging/elasticbeanstalk.env /var/elasticbeanstalk/staging/supervisor
+  [foreman export] writing: application.conf
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n supervisor -l'/var/log/supervisord.log' -t bundlelogs
+  
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n containerlistener -l'/var/log/eb-container-listener.log' -t bundlelogs
+  
+[2019-10-31T08:40:22.667Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage0/ConfigDeployPreHook/01_configure_xray.sh] : Starting activity...
+[2019-10-31T08:40:22.776Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage0/ConfigDeployPreHook/01_configure_xray.sh] : Completed activity.
+[2019-10-31T08:40:22.776Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage0/ConfigDeployPreHook/03_configure_proxy.sh] : Starting activity...
+[2019-10-31T08:40:22.954Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage0/ConfigDeployPreHook/03_configure_proxy.sh] : Completed activity. Result:
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n nginx -l'/var/log/nginx/*'
+  
+  Executing: /usr/sbin/nginx -t -c /var/elasticbeanstalk/staging/nginx/nginx.conf
+  nginx: the configuration file /var/elasticbeanstalk/staging/nginx/nginx.conf syntax is ok
+  nginx: configuration file /var/elasticbeanstalk/staging/nginx/nginx.conf test is successful
+[2019-10-31T08:40:22.954Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage0/ConfigDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/configdeploy/pre.
+[2019-10-31T08:40:22.954Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage0] : Completed activity. Result:
+  Configuration update - Command CMD-ConfigDeploy stage 0 completed
+[2019-10-31T08:40:22.955Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1] : Starting activity...
+[2019-10-31T08:40:22.955Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook] : Starting activity...
+[2019-10-31T08:40:22.957Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook/01_stop_before_promote.sh] : Starting activity...
+[2019-10-31T08:40:25.658Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook/01_stop_before_promote.sh] : Completed activity. Result:
+  Executing: /usr/local/bin/supervisorctl -c /etc/supervisor/supervisord.conf stop application:*
+  application:application-web-1: stopped
+  Executing: /usr/local/bin/supervisorctl -c /etc/supervisor/supervisord.conf stop all
+  listener:supervisor_listener: stopped
+  Executing: /sbin/status supervisord
+  supervisord start/running, process 5255
+  Executing: /sbin/stop supervisord
+  supervisord stop/waiting
+[2019-10-31T08:40:25.658Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook/01stop_xray.sh] : Starting activity...
+[2019-10-31T08:40:25.774Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook/01stop_xray.sh] : Completed activity. Result:
+  Executing: if ( initctl status xray | grep start ); then initctl stop xray; fi
+  
+[2019-10-31T08:40:25.774Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook/02start_xray.sh] : Starting activity...
+[2019-10-31T08:40:25.883Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook/02start_xray.sh] : Completed activity.
+[2019-10-31T08:40:25.884Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook/03_stop_proxy.sh] : Starting activity...
+[2019-10-31T08:40:26.104Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook/03_stop_proxy.sh] : Completed activity. Result:
+  Executing: service nginx stop
+  Stopping nginx: [  OK  ]
+[2019-10-31T08:40:26.104Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook/07_start_application.sh] : Starting activity...
+[2019-10-31T08:40:26.211Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook/07_start_application.sh] : Completed activity. Result:
+  Executing: /sbin/start supervisord
+  supervisord start/running, process 5969
+[2019-10-31T08:40:26.211Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook/09_start_proxy.sh] : Starting activity...
+[2019-10-31T08:40:28.831Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook/09_start_proxy.sh] : Completed activity. Result:
+  Executing: service nginx stop
+  
+  Executing: service nginx start
+  Starting nginx: [  OK  ]
+  Executing: /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy nginx
+  
+  Executing: /opt/elasticbeanstalk/bin/healthd-configure --appstat-log-path /var/log/nginx/healthd/application.log --appstat-unit sec --appstat-timestamp-on 'completion'
+  
+  Executing: /opt/elasticbeanstalk/bin/healthd-restart
+  
+[2019-10-31T08:40:28.831Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook/11_stop_after_promote.sh] : Starting activity...
+[2019-10-31T08:40:29.343Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook/11_stop_after_promote.sh] : Completed activity.
+[2019-10-31T08:40:29.343Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/configdeploy/enact.
+[2019-10-31T08:40:29.344Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployPostHook] : Starting activity...
+[2019-10-31T08:40:29.344Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1/ConfigDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/configdeploy/post.
+[2019-10-31T08:40:29.344Z] INFO  [5825]  - [Configuration update lab4-source@4/ConfigDeployStage1] : Completed activity. Result:
+  Application restart - Command CMD-ConfigDeploy stage 1 completed
+[2019-10-31T08:40:29.344Z] INFO  [5825]  - [Configuration update lab4-source@4/AddonsAfter] : Starting activity...
+[2019-10-31T08:40:29.344Z] INFO  [5825]  - [Configuration update lab4-source@4/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2019-10-31T08:40:29.344Z] INFO  [5825]  - [Configuration update lab4-source@4/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2019-10-31T08:40:29.896Z] INFO  [5825]  - [Configuration update lab4-source@4/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2019-10-31T08:40:29.896Z] INFO  [5825]  - [Configuration update lab4-source@4/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2019-10-31T08:40:29.896Z] INFO  [5825]  - [Configuration update lab4-source@4/AddonsAfter] : Completed activity.
+[2019-10-31T08:40:29.896Z] INFO  [5825]  - [Configuration update lab4-source@4] : Completed activity. Result:
+  Configuration update - Command CMD-ConfigDeploy succeeded
+[2019-11-17T21:59:35.604Z] INFO  [22373] - [CMD-TailLogs] : Starting activity...
+[2019-11-17T21:59:35.604Z] INFO  [22373] - [CMD-TailLogs/AddonsBefore] : Starting activity...
+[2019-11-17T21:59:35.604Z] INFO  [22373] - [CMD-TailLogs/AddonsBefore] : Completed activity.
+[2019-11-17T21:59:35.604Z] INFO  [22373] - [CMD-TailLogs/TailLogs] : Starting activity...
+[2019-11-17T21:59:35.604Z] INFO  [22373] - [CMD-TailLogs/TailLogs/TailLogs] : Starting activity...
+[2019-11-17T21:59:35.833Z] INFO  [22373] - [CMD-TailLogs/TailLogs/TailLogs] : Completed activity.
+[2019-11-17T21:59:35.833Z] INFO  [22373] - [CMD-TailLogs/TailLogs] : Completed activity. Result:
+  CMD-TailLogs - stage 0 - Command CMD-TailLogs stage 0 completed
+[2019-11-17T21:59:35.834Z] INFO  [22373] - [CMD-TailLogs/AddonsAfter] : Starting activity...
+[2019-11-17T21:59:35.834Z] INFO  [22373] - [CMD-TailLogs/AddonsAfter] : Completed activity.
+[2019-11-17T21:59:35.834Z] INFO  [22373] - [CMD-TailLogs] : Completed activity. Result:
+  CMD-TailLogs - Command CMD-TailLogs succeeded
+[2019-11-17T22:11:30.034Z] INFO  [22831] - [CMD-TailLogs] : Starting activity...
+[2019-11-17T22:11:30.035Z] INFO  [22831] - [CMD-TailLogs/AddonsBefore] : Starting activity...
+[2019-11-17T22:11:30.035Z] INFO  [22831] - [CMD-TailLogs/AddonsBefore] : Completed activity.
+[2019-11-17T22:11:30.035Z] INFO  [22831] - [CMD-TailLogs/TailLogs] : Starting activity...
+[2019-11-17T22:11:30.035Z] INFO  [22831] - [CMD-TailLogs/TailLogs/TailLogs] : Starting activity...
+[2019-11-17T22:11:30.314Z] INFO  [22831] - [CMD-TailLogs/TailLogs/TailLogs] : Completed activity.
+[2019-11-17T22:11:30.314Z] INFO  [22831] - [CMD-TailLogs/TailLogs] : Completed activity. Result:
+  CMD-TailLogs - stage 0 - Command CMD-TailLogs stage 0 completed
+[2019-11-17T22:11:30.314Z] INFO  [22831] - [CMD-TailLogs/AddonsAfter] : Starting activity...
+[2019-11-17T22:11:30.314Z] INFO  [22831] - [CMD-TailLogs/AddonsAfter] : Completed activity.
+[2019-11-17T22:11:30.314Z] INFO  [22831] - [CMD-TailLogs] : Completed activity. Result:
+  CMD-TailLogs - Command CMD-TailLogs succeeded
+[2019-11-17T22:13:38.045Z] INFO  [22905] - [CMD-BundleLogs] : Starting activity...
+[2019-11-17T22:13:38.045Z] INFO  [22905] - [CMD-BundleLogs/AddonsBefore] : Starting activity...
+[2019-11-17T22:13:38.046Z] INFO  [22905] - [CMD-BundleLogs/AddonsBefore] : Completed activity.
+[2019-11-17T22:13:38.046Z] INFO  [22905] - [CMD-BundleLogs/BundleLogs] : Starting activity...
+[2019-11-17T22:13:38.046Z] INFO  [22905] - [CMD-BundleLogs/BundleLogs/BundleLogs] : Starting activity...
